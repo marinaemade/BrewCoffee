@@ -1,26 +1,16 @@
-import { useState } from 'react'
-import './index.css'
-import Nav from './Nav'
-import Home from './Home';
-import About from './About';
-import Menu from './Menu';
-import Contact from './Contact';
-import Footer from './Footer';
-import ThemeController from './ThemeController';
-function App() {
-  const [count, setCount] = useState(0)
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 
+function App() {
   return (
-    <>
-      <Nav></Nav>
-      <Home></Home>
-      <About></About>
-      <Menu></Menu>
-      <Contact></Contact>
-      <Footer></Footer>
-      <ThemeController></ThemeController>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route path="/about" element={<Layout />} />
+      <Route path="/menu" element={<Layout />} />
+      <Route path="/contact" element={<Layout />} />
+    </Routes>
+    
+  );
 }
 
-export default App
+export default App;
